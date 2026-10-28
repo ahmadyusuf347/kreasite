@@ -15,17 +15,17 @@
     />
     <style>
       :root {
-        --g: #1fd8a4;
-        --g2: #0e6b5c;
-        --g3: #052e2a;
-        --k: #050808;
-        --k2: #0b1311;
-        --lt: #f1f4f3;
-        --ink: #0a1110;
-        --mut: #5b6b67;
-        --line: #d9e0de;
+        --g: #00a8e2;
+        --g2: #1f5aa8;
+        --g3: #0d2547;
+        --k: #040a14;
+        --k2: #0a1322;
+        --lt: #f1f5fb;
+        --ink: #0a1220;
+        --mut: #5a6b85;
+        --line: #d9e1ee;
         --bg: #fff;
-        --on: #0a1110;
+        --on: #0a1220;
         box-sizing: border-box;
         padding-top: env(safe-area-inset-top, 0px);
         padding-bottom: env(safe-area-inset-bottom, 0px);
@@ -33,20 +33,20 @@
       @media (prefers-color-scheme: dark) {
         :root:not([data-theme="light"]) {
           color-scheme: dark;
-          --lt: #0b1311;
-          --ink: #eef4f2;
-          --mut: #98aaa5;
-          --line: #1d2c29;
-          --bg: #060b0a;
+          --lt: #0a1322;
+          --ink: #eef3fb;
+          --mut: #9aaac2;
+          --line: #1a2a44;
+          --bg: #060b16;
         }
       }
       :root[data-theme="dark"] {
         color-scheme: dark;
-        --lt: #0b1311;
-        --ink: #eef4f2;
-        --mut: #98aaa5;
-        --line: #1d2c29;
-        --bg: #060b0a;
+        --lt: #0a1322;
+        --ink: #eef3fb;
+        --mut: #9aaac2;
+        --line: #1a2a44;
+        --bg: #060b16;
       }
       *,
       *::before,
@@ -112,7 +112,7 @@
           sans-serif;
         border: 2px solid var(--g);
         background: var(--g);
-        color: #031512;
+        color: #02101f;
         border-radius: 999px;
         cursor: pointer;
         transition: 0.2s;
@@ -129,7 +129,7 @@
       .btn.o:hover {
         background: var(--g);
         border-color: var(--g);
-        color: #031512;
+        color: #02101f;
       }
       .ar::after {
         content: "→";
@@ -143,7 +143,7 @@
       /* utility + header */
       .ut {
         background: var(--k);
-        color: #8da39d;
+        color: #8ea0bb;
         font-size: 0.78rem;
         position: relative;
         z-index: 31;
@@ -170,7 +170,7 @@
           border-color 0.3s;
       }
       header.sc {
-        background: rgba(5, 8, 8, 0.88);
+        background: rgba(4, 10, 20, 0.88);
         backdrop-filter: blur(14px);
         border-bottom-color: rgba(255, 255, 255, 0.1);
       }
@@ -241,7 +241,7 @@
       }
       #dr a {
         padding: 1.1rem 0;
-        border-bottom: 1px solid #1c2a27;
+        border-bottom: 1px solid #1a2840;
         font-size: 1.4rem;
         font-weight: 600;
       }
@@ -277,11 +277,11 @@
         background:
           radial-gradient(
             circle at 78% 40%,
-            rgba(31, 216, 164, 0.4),
-            rgba(14, 107, 92, 0.25) 45%,
-            #050808 80%
+            rgba(0, 168, 226, 0.4),
+            rgba(31, 90, 168, 0.25) 45%,
+            #040a14 80%
           ),
-          #050808;
+          #040a14;
       }
       .hero-bg video {
         position: absolute;
@@ -295,12 +295,12 @@
         position: absolute;
         inset: 0;
         background:
-          linear-gradient(180deg, rgba(5, 8, 8, 0.6), transparent 22%),
+          linear-gradient(180deg, rgba(4, 10, 20, 0.6), transparent 22%),
           linear-gradient(
             90deg,
-            rgba(5, 8, 8, 0.88),
-            rgba(5, 8, 8, 0.5) 60%,
-            rgba(5, 8, 8, 0.3)
+            rgba(4, 10, 20, 0.88),
+            rgba(4, 10, 20, 0.5) 60%,
+            rgba(4, 10, 20, 0.3)
           );
       }
       .hbtn {
@@ -318,7 +318,7 @@
         font-size: 1.3rem;
         max-width: 36rem;
         margin: 2rem 0 2.4rem;
-        color: #c3d3ce;
+        color: #c3d0e6;
         font-weight: 400;
       }
       .hero .cta {
@@ -332,7 +332,7 @@
         margin-top: 80px;
         padding: 0 36px;
         border-top: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(5, 8, 8, 0.55);
+        background: rgba(4, 10, 20, 0.55);
         backdrop-filter: blur(6px);
       }
       .feat div {
@@ -351,7 +351,7 @@
       }
       .feat p {
         font-size: 0.9rem;
-        color: #a9bdb7;
+        color: #a9b9d3;
       }
       /* stats band */
       .band {
@@ -374,7 +374,7 @@
       .band span {
         display: block;
         margin-top: 0.6rem;
-        color: #bfe9dd;
+        color: #cfe4ff;
         font-size: 0.98rem;
       }
       section {
@@ -496,7 +496,7 @@
         font-size: 0.78rem;
         font-weight: 600;
         background: var(--g);
-        color: #031512;
+        color: #02101f;
         padding: 0.3rem 0.8rem;
         border-radius: 999px;
       }
@@ -557,7 +557,7 @@
         color: var(--ink);
       }
       .ca .btn.o:hover {
-        color: #031512;
+        color: #02101f;
         border-color: var(--g);
       }
       /* pricing */
@@ -575,7 +575,7 @@
         border: 1px solid var(--line);
       }
       .pk.f {
-        background: linear-gradient(160deg, var(--g2), var(--g3));
+        background: linear-gradient(160deg, var(--g3), var(--g2));
         color: #fff;
         border-color: var(--g2);
       }
@@ -595,7 +595,7 @@
         color: var(--mut);
       }
       .pk.f .d {
-        color: #b5e3d6;
+        color: #cfe0ff;
       }
       .pk .pc {
         font-size: 3.6rem;
@@ -616,7 +616,7 @@
         list-style: none;
         padding: 24px 0 0;
         margin: 2rem 0;
-        border-top: 1px solid rgba(128, 150, 144, 0.35);
+        border-top: 1px solid rgba(128, 144, 170, 0.35);
         display: grid;
         gap: 0.9rem;
       }
@@ -641,7 +641,7 @@
       .pk:not(.f) .btn:hover {
         background: var(--g);
         border-color: var(--g);
-        color: #031512;
+        color: #02101f;
       }
       .calc {
         margin-top: 24px;
@@ -709,7 +709,7 @@
         align-items: center;
       }
       .add input {
-        accent-color: #0e9f7e;
+        accent-color: #1f5aa8;
         width: 18px;
         height: 18px;
       }
@@ -724,7 +724,7 @@
         font-size: 1rem;
         color: var(--g);
         padding-bottom: 16px;
-        border-bottom: 1px solid #1d2c29;
+        border-bottom: 1px solid #1a2a44;
         letter-spacing: 0;
       }
       #sm {
@@ -732,7 +732,7 @@
         gap: 0.7rem;
         padding: 22px 0;
         flex: 1;
-        color: #cfdcd8;
+        color: #cfdcf0;
         font-size: 0.95rem;
       }
       #sm div {
@@ -745,7 +745,7 @@
         justify-content: space-between;
         align-items: baseline;
         padding: 22px 0 26px;
-        border-top: 1px solid #1d2c29;
+        border-top: 1px solid #1a2a44;
       }
       .tot b {
         font-size: 2.4rem;
@@ -775,7 +775,7 @@
         font-size: 1.9rem;
       }
       .gr p {
-        color: #b3c6c1;
+        color: #b3c2dc;
         margin-top: 1rem;
       }
       .faq {
@@ -830,7 +830,7 @@
         top: -300px;
         background: radial-gradient(
           circle,
-          rgba(31, 216, 164, 0.22),
+          rgba(0, 168, 226, 0.22),
           transparent 65%
         );
       }
@@ -841,18 +841,18 @@
         position: relative;
       }
       .ct p.mut {
-        color: #a1b6b0;
+        color: #a1b2cf;
         margin-top: 1.4rem;
         font-size: 1.15rem;
       }
       .wa {
         margin-top: 2.4rem;
         padding-top: 24px;
-        border-top: 1px solid #1d2c29;
+        border-top: 1px solid #1a2a44;
       }
       .wa small {
         display: block;
-        color: #8da39d;
+        color: #8ea0bb;
       }
       .wa b {
         font-size: 1.8rem;
@@ -875,7 +875,7 @@
         gap: 0.45rem;
         font-size: 0.88rem;
         font-weight: 600;
-        color: #c4d6d1;
+        color: #c4d3ea;
       }
       input[type="text"],
       input[type="tel"],
@@ -883,19 +883,19 @@
         font: inherit;
         padding: 0.95rem 1rem;
         background: var(--k);
-        border: 1px solid #223532;
+        border: 1px solid #243a5c;
         color: #fff;
         border-radius: 0;
         width: 100%;
       }
       input::placeholder,
       textarea::placeholder {
-        color: #62786f;
+        color: #62789a;
       }
       footer {
         background: var(--k);
-        color: #8da39d;
-        border-top: 1px solid #16231f;
+        color: #8ea0bb;
+        border-top: 1px solid #14213a;
         padding: 80px 0 32px;
         font-size: 0.92rem;
       }
@@ -922,7 +922,7 @@
         font-weight: 800;
         letter-spacing: -0.06em;
         line-height: 0.85;
-        color: #0d1816;
+        color: #0c1424;
         margin: 60px 0 24px;
         user-select: none;
       }
@@ -932,7 +932,7 @@
         flex-wrap: wrap;
         gap: 12px;
         padding-top: 24px;
-        border-top: 1px solid #16231f;
+        border-top: 1px solid #14213a;
       }
       /* modal + toast */
       #md {
@@ -1122,6 +1122,24 @@
           scroll-behavior: auto !important;
         }
       }
+
+      /* Kontras teks aksen di mode gelap */
+      @media (prefers-color-scheme: dark) {
+        :root:not([data-theme="light"]) .cb .r b,
+        :root:not([data-theme="light"]) .st .n,
+        :root:not([data-theme="light"]) .pk:not(.f) .k,
+        :root:not([data-theme="light"]) .pk:not(.f) li::before,
+        :root:not([data-theme="light"]) summary::after {
+          color: var(--g);
+        }
+      }
+      :root[data-theme="dark"] .cb .r b,
+      :root[data-theme="dark"] .st .n,
+      :root[data-theme="dark"] .pk:not(.f) .k,
+      :root[data-theme="dark"] .pk:not(.f) li::before,
+      :root[data-theme="dark"] summary::after {
+        color: var(--g);
+      }
     </style>
   </head>
   <body>
@@ -1179,7 +1197,7 @@
           justify-content: center;
           font-size: 1rem;
           border-bottom: 2px solid var(--g);
-          color: #031512;
+          color: #02101f;
         "
         href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20pembuatan%20website%20company%20profile."
         target="_blank"
@@ -1205,7 +1223,7 @@
           </p>
           <div class="cta">
             <a class="btn" href="#katalog"
-              >Lihat Katalog Template <span class="ar"></span></a
+              >Lihat Katalog<span class="ar"></span></a
             ><a
               class="btn o"
               target="_blank"
@@ -1408,7 +1426,7 @@
               <h4>Ringkasan Estimasi</h4>
               <div id="sm"></div>
               <div class="tot">
-                <span style="color: #8da39d">Total Estimasi</span
+                <span style="color: #8ea0bb">Total Estimasi</span
                 ><b id="tt"></b>
               </div>
               <button
@@ -1639,7 +1657,7 @@
           "v2.4",
           "Desain elegan & profesional untuk perusahaan finansial, konsultan, dan firma hukum.",
           ["HTML5", "Tailwind v3", "SEO Ready"],
-          "linear-gradient(135deg,#0e6b5c,#052e2a)",
+          "linear-gradient(135deg,#1f5aa8,#0d2547)",
         ],
         [
           "BuildMaster Heavy",
@@ -1650,7 +1668,7 @@
           "v1.8",
           "Cocok untuk kontraktor bangunan, perusahaan teknik sipil, manufaktur, dan tambang.",
           ["HTML5", "Tailwind v3", "Portfolio Grid"],
-          "linear-gradient(135deg,#12332e,#050808)",
+          "linear-gradient(135deg,#13305a,#040a14)",
         ],
         [
           "Nexus Agency Studio",
@@ -1661,7 +1679,7 @@
           "v3.0",
           "Desain kekinian & interaktif khusus digital agency, software house, dan desainer.",
           ["Tailwind v3", "Dark Elements", "Smooth Motion"],
-          "linear-gradient(135deg,#0b1f3a,#0e6b5c)",
+          "linear-gradient(135deg,#0b1f3a,#1f5aa8)",
         ],
         [
           "Tokoku Storefront",
@@ -1672,7 +1690,7 @@
           "v1.2",
           "Etalase produk yang rapi dengan tombol pesan langsung via WhatsApp untuk UMKM.",
           ["HTML5", "Katalog Produk", "WA Order"],
-          "linear-gradient(135deg,#127a68,#0a2a26)",
+          "linear-gradient(135deg,#2a74b8,#0b2244)",
         ],
         [
           "Serene Care Clinic",
@@ -1683,7 +1701,7 @@
           "v1.5",
           "Tampilan bersih dan menenangkan untuk klinik, salon, spa, dan layanan kesehatan.",
           ["HTML5", "Booking CTA", "SEO Ready"],
-          "linear-gradient(135deg,#1a8f78,#0b2e2a)",
+          "linear-gradient(135deg,#00a8e2,#12305f)",
         ],
       ];
       $("#fl").innerHTML = cats
