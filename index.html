@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter+Tight:wght@400;500;600;700;800&display=swap"
       rel="stylesheet"
     />
     <style>
@@ -91,9 +91,13 @@
         font-weight: 700;
       }
       h1 {
-        font-size: clamp(3rem, 8.4vw, 7.6rem);
-        font-weight: 800;
-        letter-spacing: -0.045em;
+        font-family: "Bebas Neue", "Inter Tight", Impact, sans-serif;
+        font-size: clamp(2.4rem, 6.72vw, 6.08rem); /* 20% lebih kecil */
+        font-weight: 400; /* Bebas Neue hanya punya 1 weight */
+        letter-spacing: 0.01em; /* rapat tapi tidak menempel */
+        line-height: 1;
+        -webkit-text-stroke: 0.035em currentColor; /* efek extra bold */
+        paint-order: stroke fill;
       }
       h2 {
         font-size: clamp(2.2rem, 5vw, 4.2rem);
@@ -310,9 +314,10 @@
         padding: 0.65rem 1.3rem;
       }
       .hero .w {
+        width: 100%; /* cegah container menyusut & bergeser ke tengah */
         position: relative;
         padding-top: 120px;
-        padding-bottom: 0;
+        padding-bottom: 64px;
       }
       .hero .lead {
         font-size: 1.3rem;
@@ -326,14 +331,15 @@
         flex-wrap: wrap;
         gap: 14px;
       }
+      .feat-bar {
+        background: #0d1624;
+        border-top: 1px solid rgba(255, 255, 255, 0.18);
+      }
       .feat {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        margin-top: 80px;
+        margin-top: 0;
         padding: 0 36px;
-        border-top: 1px solid rgba(255, 255, 255, 0.18);
-        background: rgba(4, 10, 20, 0.55);
-        backdrop-filter: blur(6px);
       }
       .feat div {
         padding: 28px 30px 34px 0;
@@ -357,25 +363,51 @@
       .band {
         background: linear-gradient(120deg, var(--g3), var(--g2));
         color: #fff;
-        padding: 72px 0;
+        padding: 64px 0;
       }
       .band .w {
         display: grid;
         grid-template-columns: repeat(4, 1fr);
-        gap: 32px;
+        gap: 0;
+      }
+      .band .w > div {
+        position: relative;
+        padding: 8px 32px;
+        text-align: center;
+      }
+      .band .w > div + div {
+        border-left: 1px solid rgba(255, 255, 255, 0.16);
       }
       .band b {
         display: block;
-        font-size: clamp(3rem, 6vw, 5.4rem);
-        font-weight: 800;
-        letter-spacing: -0.05em;
+        font-family: "Bebas Neue", "Inter Tight", Impact, sans-serif;
+        font-size: clamp(3.2rem, 5.6vw, 5rem);
+        font-weight: 400;
+        letter-spacing: 0.02em;
         line-height: 1;
+      }
+      .band b small {
+        font-size: 0.55em;
+        margin-left: 0.12em;
+        letter-spacing: 0.04em;
+        color: #8fd3f2;
+      }
+      .band b::after {
+        content: "";
+        display: block;
+        width: 36px;
+        height: 3px;
+        margin: 14px auto 0;
+        background: var(--g);
+        border-radius: 2px;
       }
       .band span {
         display: block;
-        margin-top: 0.6rem;
+        margin: 14px auto 0;
+        max-width: 15rem;
         color: #cfe4ff;
         font-size: 0.98rem;
+        line-height: 1.4;
       }
       section {
         padding: 120px 0;
@@ -988,6 +1020,14 @@
         .steps {
           grid-template-columns: 1fr 1fr;
         }
+        .band .w > div:nth-child(3) {
+          border-left: 0;
+        }
+        .band .w > div:nth-child(n + 3) {
+          margin-top: 24px;
+          padding-top: 32px;
+          border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
         .grid3,
         .pr,
         .calc,
@@ -1027,31 +1067,41 @@
         }
       }
       @media (max-width: 560px) {
-        .feat,
         .band .w,
         .steps,
         form .two {
           grid-template-columns: 1fr;
         }
         .band {
-          padding: 40px 0;
+          padding: 28px 0;
         }
         .band .w {
-          grid-template-columns: repeat(4, 1fr);
-          gap: 10px;
+          grid-template-columns: repeat(4, 1fr); /* 1 baris */
+          padding: 0 8px;
         }
-        .band .w > div {
-          display: block;
-          padding: 0;
+        .band .w > div,
+        .band .w > div:nth-child(n + 3) {
+          margin-top: 0;
+          padding: 4px 6px;
+        }
+        .band .w > div + div,
+        .band .w > div:nth-child(3) {
+          border-left: 1px solid rgba(255, 255, 255, 0.16);
+        }
+        .band .w > div:nth-child(n + 3) {
+          border-top: 0;
         }
         .band b {
-          font-size: 1.55rem;
-          letter-spacing: -0.03em;
-          min-width: 0;
+          font-size: 1.9rem;
+        }
+        .band b::after {
+          width: 18px;
+          height: 2px;
+          margin-top: 8px;
         }
         .band span {
-          margin-top: 0.4rem;
-          font-size: 0.72rem;
+          margin-top: 8px;
+          font-size: 0.66rem;
           line-height: 1.3;
         }
         .steps {
@@ -1078,15 +1128,44 @@
           font-size: 0.9rem;
         }
         .feat {
-          padding: 6px 22px;
-          margin-top: 48px;
+          grid-template-columns: 1fr 1fr; /* 2 kolom x 2 baris */
+          padding: 0 18px;
+          margin-top: 0;
         }
-        .feat div {
-          padding: 20px 0;
-          border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-        }
+        .feat div,
         .feat div:last-child {
-          border-bottom: 0;
+          padding: 20px 14px;
+          margin: 0;
+          border: 0;
+        }
+        .feat div:nth-child(odd) {
+          padding-left: 0;
+          border-right: 1px solid rgba(255, 255, 255, 0.14);
+        }
+        .feat div:nth-child(even) {
+          padding-right: 0;
+        }
+        .feat div:nth-child(-n + 2) {
+          border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+        }
+        .feat b {
+          font-size: 0.95rem;
+          margin-bottom: 0.4rem;
+        }
+        .feat p {
+          font-size: 0.78rem;
+          line-height: 1.55;
+          text-align: left;
+        }
+      }
+      .hero h1 .hl {
+        color: var(--g);
+      }
+      @media (min-width: 981px) {
+        .hero h1 {
+          font-size: clamp(3rem, 5.4vw, 5.2rem); /* sedikit lebih kecil */
+          max-width: 11.5em; /* turun ke bawah, tidak melebar ke kanan */
+          text-wrap: balance;
         }
       }
       @media (min-width: 1600px) {
@@ -1101,8 +1180,8 @@
         .w {
           max-width: 1700px;
         }
-        h1 {
-          font-size: clamp(3rem, 8.4vw, 6.8rem);
+        .hero h1 {
+          font-size: clamp(3rem, 5.4vw, 4.6rem);
         }
       }
       @media (min-width: 2400px) {
@@ -1112,8 +1191,8 @@
         .w {
           max-width: 1900px;
         }
-        h1 {
-          font-size: clamp(3rem, 8.4vw, 6rem);
+        .hero h1 {
+          font-size: clamp(3rem, 5.4vw, 4.1rem);
         }
       }
       @media (prefers-reduced-motion: reduce) {
@@ -1168,7 +1247,7 @@
         <div class="hbtn">
           <a
             class="btn"
-            href="https://wa.me/6281234567890?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20pembuatan%20website%20company%20profile."
+            href="https://wa.me/628561507488?text=Halo%20Admin,%20saya%20ingin%20konsultasi%20pembuatan%20website%20company%20profile."
             target="_blank"
             rel="noopener"
             >Tanya Admin</a
@@ -1215,7 +1294,10 @@
           </video>
         </div>
         <div class="w">
-          <h1>Website bisnis Anda, siap online hari ini.</h1>
+          <h1>
+            Tingkatkan Kredibilitas Bisnis dengan
+            <span class="hl">Website</span> Profesional.
+          </h1>
           <p class="lead">
             Template website company profile premium. Pilih desain, sesuaikan
             konten bisnis, dan website siap online dalam waktu kurang dari 24
@@ -1232,6 +1314,12 @@
               >Konsultasi Gratis</a
             >
           </div>
+        </div>
+      </section>
+
+      <!-- FITUR: di bawah video hero -->
+      <div class="feat-bar">
+        <div class="w">
           <div class="feat">
             <div>
               <b>Fast Loading</b>
@@ -1263,15 +1351,19 @@
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
       <div class="band">
         <div class="w">
           <div><b>&lt;24</b><span>Jam website siap online</span></div>
-          <div><b>100%</b><span>Responsive di semua perangkat</span></div>
+          <div>
+            <b>100<small>%</small></b
+            ><span>Responsive di semua perangkat</span>
+          </div>
           <div><b>5</b><span>Kategori template bisnis</span></div>
           <div>
-            <b>1 Thn</b><span>Domain &amp; hosting di paket lengkap</span>
+            <b>1<small>Thn</small></b
+            ><span>Domain &amp; hosting di paket lengkap</span>
           </div>
         </div>
       </div>
