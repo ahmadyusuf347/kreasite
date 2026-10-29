@@ -618,6 +618,28 @@
         padding: 0.3rem 0.8rem;
         border-radius: 999px;
       }
+      .th.ti {
+        padding: 28px;
+        aspect-ratio: auto;
+        justify-content: center;
+      }
+      .th.ti::before {
+        display: none;
+      }
+      .th.ti .pic {
+        position: relative;
+        overflow: hidden;
+        line-height: 0;
+      }
+      .th.ti img {
+        display: block;
+        width: 100%;
+        height: auto;
+        transition: transform 0.6s ease;
+      }
+      .card:hover .th.ti img {
+        transform: scale(1.12);
+      }
       .th .nm {
         font-weight: 800;
         font-size: 1.7rem;
@@ -1790,9 +1812,17 @@
         <h3 id="mt"></h3>
         <div class="th" id="mp"></div>
         <p id="mc" style="color: var(--mut)"></p>
-        <button class="btn" style="margin-top: 20px" onclick="closeM()">
-          Tutup Preview
-        </button>
+        <div class="ca" style="margin-top: 20px">
+          <a
+            class="btn"
+            id="md-demo"
+            href="https://maintenance.kreasite.digital/"
+            target="_blank"
+            rel="noopener"
+            >Live Demo</a
+          >
+          <button class="btn o" onclick="closeM()">Tutup Preview</button>
+        </div>
       </div>
     </div>
 
@@ -1835,6 +1865,7 @@
         ["agency", "Creative/Agency"],
         ["umkm", "E-Commerce/UMKM"],
         ["health", "Health & Beauty"],
+        ["sekolah", "Sekolah & Kampus"],
       ];
       const T = [
         [
@@ -1892,7 +1923,38 @@
           ["HTML5", "Booking CTA", "SEO Ready"],
           "linear-gradient(135deg,#00a8e2,#12305f)",
         ],
+        [
+          "EduSmart Sekolah Dasar",
+          "sekolah",
+          "Sekolah & Kampus",
+          "School Profile",
+          "Friendly Edu",
+          "v1.0",
+          "Website profil sekolah yang ramah dan informatif: visi misi, program unggulan, galeri kegiatan, hingga info pendaftaran siswa baru (PPDB).",
+          ["HTML5", "PPDB Online", "Galeri Kegiatan"],
+          "linear-gradient(135deg,#1f5aa8,#0d2547)",
+          "asset/sekolahdasar.jpg",
+        ],
+        [
+          "UniPrime Campus",
+          "sekolah",
+          "Sekolah & Kampus",
+          "University Portal",
+          "Academic Modern",
+          "v1.0",
+          "Tampilan akademik yang kredibel untuk kampus, politeknik, dan lembaga kursus: daftar fakultas/prodi, berita kampus, dan pendaftaran mahasiswa baru.",
+          ["HTML5", "Daftar Prodi", "SEO Ready"],
+          "linear-gradient(135deg,#12305f,#00a8e2)",
+        ],
       ];
+      const DEMO = "https://maintenance.kreasite.digital/";
+      const tDemo = (t) => t[10] || DEMO;
+      const tImg = (t) => t[9] || "asset/template.webp";
+      const thBg = (t) => (tImg(t) ? "var(--bg)" : t[8]);
+      const thIn = (t) =>
+        tImg(t)
+          ? `<div class="pic"><img src="${tImg(t)}" alt="${t[0]}" loading="lazy" /></div>`
+          : `<span class="tag">${t[2]}</span><div><div class="nm">${t[3]}</div><small style="opacity:.75">${t[4]} · ${t[5]}</small></div>`;
       $("#fl").innerHTML = cats
         .map(
           (c, i) =>
@@ -1903,7 +1965,7 @@
         (
           t,
           i,
-        ) => `<article class="card" data-c="${t[1]}"><div class="th" style="background:${t[8]}"><span class="tag">${t[2]}</span><div><div class="nm">${t[3]}</div><small style="opacity:.75">${t[4]} · ${t[5]}</small></div></div>
+        ) => `<article class="card" data-c="${t[1]}"><div class="th${tImg(t) ? " ti" : ""}" style="background:${thBg(t)}">${thIn(t)}</div>
 <div class="cb"><div class="r"><h3>${t[0]}</h3><b>Rp 300.000</b></div><p>${t[6]}</p><div class="chips">${t[7].map((x) => `<span>${x}</span>`).join("")}</div>
 <div class="ca"><button class="btn o" onclick="openM(${i})">Live Preview</button><button class="btn" onclick="pick(${i})">Pilih Template</button></div></div></article>`,
       ).join("");
@@ -1933,10 +1995,11 @@
       function openM(i) {
         const t = T[i];
         $("#mt").textContent = t[0] + " Preview";
-        $("#mp").style.background = t[8];
-        $("#mp").innerHTML =
-          `<span class="tag">${t[2]}</span><div><div class="nm">${t[3]}</div><small style="opacity:.75">${t[4]} · ${t[5]}</small></div>`;
+        $("#mp").className = "th" + (tImg(t) ? " ti" : "");
+        $("#mp").style.background = thBg(t);
+        $("#mp").innerHTML = thIn(t);
         $("#mc").textContent = t[6];
+        $("#md-demo").href = tDemo(t);
         $("#md").classList.add("on");
       }
       const closeM = () => $("#md").classList.remove("on");
